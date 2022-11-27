@@ -10,15 +10,18 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'CART_ADD_ITEM': //add to cart, keep everything in the cart but add the new item
-      return {
-        ...state, //keep all values in the filed
-        cart: {
-          //for the cart object
-          ...state.cart, //keep all previous values in the cart object, only update cartItems
-          cartItems: [...state.cart.cartItems, action.payload], //keep previous items in the cart, add the new one
-        },
-      };
+    case 'CART_ADD_ITEM': //add to cart, keep everything in the cart, add new item
+      const newItem = action.payload;
+      const existItem = state.cart.cartItems.find(
+        (item) => item._id === newItem._id
+      );
+      const cartItems = existItem
+        ? state.cart.cartItems.map((item) =>
+            item._id === existItem._id ? newItem : item
+          )
+        : [...state.cart.cartItems, newItem];
+      return { ...state, cart: { ...state.cart, cartItems } };
+
     default:
       return state;
   }
