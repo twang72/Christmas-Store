@@ -43,7 +43,7 @@ const data = {
       category: 'Chrismas Decorations',
       image: '/images/p4.jpg',
       price: 50,
-      countInStock: 12,
+      countInStock: 0,
       brand: 'For Living',
       rating: 4.5,
       numReviews: 10,
