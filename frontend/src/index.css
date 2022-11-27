@@ -46,3 +46,7 @@ main {
 .btn-primary {
   background-color: rgb(200, 26, 61);
 }
+
+.img-large {
+  max-width: 100%;
+}
