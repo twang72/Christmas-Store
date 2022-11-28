@@ -1,5 +1,20 @@
+import bcrypt from 'bcryptjs';
 //Create an object to return products array
 const data = {
+  users: [
+    {
+      name: 'Ali',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Ben',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       //_id: '1', will be asigned automatically by mongodb
