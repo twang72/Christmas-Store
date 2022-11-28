@@ -2,7 +2,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      //_id: '1', will be asigned automatically by mongodb
       name: 'Big Christmas Tree',
       slug: 'christmas-tree-big',
       category: 'Chrismas Tree',
@@ -15,7 +15,7 @@ const data = {
       description: 'big Christmas Tree',
     },
     {
-      _id: '2',
+      //_id: '2',
       name: 'Small Christmas Tree',
       slug: 'christmas-tree-small',
       category: 'Chrismas Tree',
@@ -28,7 +28,7 @@ const data = {
       description: 'small Christmas Tree',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Christmas Bell',
       slug: 'christmas-bell',
       category: 'Chrismas Decorations',
@@ -41,7 +41,7 @@ const data = {
       description: 'Christmas decoration bells',
     },
     {
-      _id: '4',
+      //_id: '4',
       name: 'Christmas Pillow',
       slug: 'christmas-pillow',
       category: 'Chrismas Decorations',
