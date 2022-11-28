@@ -40,7 +40,7 @@ main {
 }
 
 .rating span {
-  color:gold;
+  color: gold;
 }
 
 .btn-primary {
@@ -49,4 +49,12 @@ main {
 
 .img-large {
   max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
 }
