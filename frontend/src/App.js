@@ -12,6 +12,7 @@ import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import NavDropDown from 'react-bootstrap/NavDropdown';
 import { ToastContainer } from 'react-toastify';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -20,12 +21,13 @@ function App() {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('shippingAddress');
   };
 
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
-      <ToastContainer position='bottom-center' limit={1} />
+        <ToastContainer position="bottom-center" limit={1} />
         <header>
           <NavBar className="nav-color" variant="dark">
             <Container>
@@ -74,6 +76,8 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/shipping"element={<ShippingAddressScreen />}
+              ></Route>
             </Routes>
           </Container>
         </main>
