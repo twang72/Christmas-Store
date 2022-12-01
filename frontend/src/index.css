@@ -43,7 +43,8 @@ main {
   color: gold;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: rgb(200, 26, 61);
 }
 
@@ -66,4 +67,27 @@ main {
 .checkout-steps > div.active {
   border-bottom: 0.2rem solid rgb(200, 26, 61);
   color: rgb(200, 26, 61) ;
+}
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color:rgb(200, 26, 61);
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
 }
