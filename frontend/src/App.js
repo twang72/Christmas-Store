@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
-import NavDropDown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { ToastContainer } from 'react-toastify';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -19,6 +19,9 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import DashboardScreen from './screens/DashboardScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -53,14 +56,14 @@ function App() {
                     )}
                   </Link>
                   {userInfo ? (
-                    <NavDropDown title={userInfo.name} id="basic-nav-dropdown">
+                    <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
-                        <NavDropDown.Item>User Profile</NavDropDown.Item>
+                        <NavDropdown.Item>User Profile</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/orderhistory">
-                        <NavDropDown.Item>Order History</NavDropDown.Item>
+                        <NavDropdown.Item>Order History</NavDropdown.Item>
                       </LinkContainer>
-                      <NavDropDown.Divider />
+                      <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
                         to="#signout"
@@ -68,11 +71,27 @@ function App() {
                       >
                         Sign Out
                       </Link>
-                    </NavDropDown>
+                    </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">
                       Sign In
                     </Link>
+                  )}
+                  {userInfo && userInfo.isAdmin && (
+                    <NavDropdown title="Admin" id="admin-nav-dropdown">
+                      <LinkContainer to="/admin/dashboard">
+                        <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/productlist">
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/orderlist">
+                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/userlist">
+                        <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer>
+                    </NavDropdown>
                   )}
                 </Nav>
               </NavBar.Collapse>
@@ -86,16 +105,42 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
-              <Route path="/profile" element={<ProfileScreen />} />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfileScreen />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/" element={<HomeScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route path="/order/:id" element={<OrderScreen />}></Route>
+              <Route
+                path="/order/:id"
+                element={
+                  <ProtectedRoute>
+                    <OrderScreen />
+                  </ProtectedRoute>
+                }
+              ></Route>
               <Route
                 path="/orderhistory"
-                element={<OrderHistoryScreen />}
+                element={
+                  <ProtectedRoute>
+                    <OrderHistoryScreen />
+                  </ProtectedRoute>
+                }
               ></Route>
+              <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <DashboardScreen />
+                  </AdminRoute>
+                }
+              />
             </Routes>
           </Container>
         </main>
