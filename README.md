@@ -38,7 +38,7 @@ We aim to develop a Christmas Store website with featured products on the homepa
 
 a. Homepage
 
-<img src="./readmeimages/homepage.jpg" alt="Homepage" width="500px">
+<img src="./readmeimages/homepage.JPG" alt="Homepage" width="500px">
 
 b. Detail page
 
