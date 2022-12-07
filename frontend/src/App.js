@@ -32,6 +32,7 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import ContactScreen from './screens/ContactScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -85,6 +86,9 @@ function App() {
               <NavBar.Collapse id='basic-navbar-nav'>
                 <SearchBox />
                 <Nav className='me-auto w-100  justify-content-end'>
+                  <Link className='nav-link' to='/contact'>
+                    Contact Us
+                  </Link>
                   <Link to='/cart' className='nav-link'>
                     Cart
                     {cart.cartItems.length > 0 && ( //the cart comes from context
@@ -163,6 +167,7 @@ function App() {
           <Container className='mt-3'>
             <Routes>
               <Route path='/product/:slug' element={<ProductScreen />} />
+              <Route path='/contact' element={<ContactScreen />} />
               <Route path='/cart' element={<CartScreen />} />
               <Route path='/signin' element={<SigninScreen />} />
               <Route path='/signup' element={<SignupScreen />} />
