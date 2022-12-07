@@ -66,7 +66,7 @@ main {
 }
 .checkout-steps > div.active {
   border-bottom: 0.2rem solid rgb(200, 26, 61);
-  color: rgb(200, 26, 61) ;
+  color: rgb(200, 26, 61);
 }
 
 /* sidebar */
@@ -78,7 +78,7 @@ main {
   height: 100%;
   position: absolute;
   left: -300px;
-  background-color:rgb(200, 26, 61);
+  background-color: rgb(200, 26, 61);
   transition: 0.5s;
 }
 
@@ -94,4 +94,9 @@ main {
 
 .text-bold {
   font-weight: bold;
+}
+
+.map-container {
+  width: 80%;
+  height: 50vh;
 }
