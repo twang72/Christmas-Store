@@ -78,13 +78,13 @@ function App() {
               <LinkContainer to='/'>
                 <NavBar.Brand>Christmas Store</NavBar.Brand>
               </LinkContainer>
-              <LinkContainer to='/contact'>
-                <NavBar.Brand>Contact Us</NavBar.Brand>
-              </LinkContainer>
               <NavBar.Toggle aria-controls='basic-navbar-nav' />
               <NavBar.Collapse id='basic-navbar-nav'>
                 <SearchBox />
                 <Nav className='me-auto w-100  justify-content-end'>
+                  <Link className='nav-link' to='/contact'>
+                    Contact Us
+                  </Link>
                   <Link to='/cart' className='nav-link'>
                     Cart
                     {cart.cartItems.length > 0 && ( //the cart comes from context

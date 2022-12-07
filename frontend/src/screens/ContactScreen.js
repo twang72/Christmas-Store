@@ -1,16 +1,11 @@
 import React from 'react';
-import Row from 'react-bootstrap/esm/Row';
 import { Helmet } from 'react-helmet-async';
 import { useMemo } from 'react';
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
-// import dotenv from 'dotenv';
 
 export default function ContactScreen() {
-  // const dotenv = require('dotenv');
-  // dotenv.config();
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    // googleMapsApiKey: '',
+    googleMapsApiKey: process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
   const center = useMemo(
@@ -30,11 +25,14 @@ export default function ContactScreen() {
       </Helmet>
       <h1>Contact Us</h1>
       <div className='contact'>
-        <Row>Email: christmasstore5610@gmail.com</Row>
-        <Row>Phone: 000-000-0000</Row>
-        <Row>Address: 410 W Georgia St, Vancouver, BC V6B 1Z3</Row>
+        <h6>Email</h6>
+        <p>christmasstore5610@gmail.com</p>
+        <h6>Phone</h6>
+        <p>000-000-0000</p>
+        <h6>Address</h6>
+        <p>410 W Georgia St, Vancouver, BC V6B 1Z3</p>
       </div>
-      <div className='map-container'>
+      <div>
         <GoogleMap
           zoom={13}
           center={center}
