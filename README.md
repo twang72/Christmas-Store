@@ -89,6 +89,34 @@ User profile page:
 
 <img src="./readmeimages/web-userprofilepage.png" alt="User profile page of deploy website" width="500px">
 
+### Progress in Iteration 3
+
+Search/Search Results page:
+
+<img src="./readmeimages/i3-search.png" alt="Search page" width="500px">
+
+Filter by department, price range and review ranks:
+
+<img src="./readmeimages/i3-filter.png" alt="Product list page" width="500px">
+
+Admin feature:
+
+Admin can see product list, create and delete product, edit product.
+
+<img src="./readmeimages/i3-product-list.png" alt="Product list page" width="500px">
+
+<img src="./readmeimages/i3-product-update.png" alt="Edit product page" width="500px">
+
+Admin can see order list and delete order.
+
+<img src="./readmeimages/i3-order-list.png" alt="Order list screen" width="500px">
+
+Admin can see user list, update user info, delete user.
+
+<img src="./readmeimages/i3-user-list.png" alt="User list screen" width="500px">
+
+<img src="./readmeimages/i3-user-update.png" alt="Update user info screen" width="500px">
+
 ## Contribution
 
 ### Iteration 1, 2
@@ -125,3 +153,21 @@ Complete the place order action.
 Recreate the get function for the order summary page.
 Update and recreate the get route for order history page.
 Update the server.js for deploying.
+
+### Iteration 3
+
+Jieyu Bu:
+Create user list screen for admin user, backend api, fetch and display users.
+Create user edit screen, update button, beckend api.
+Add delete user button, backend api.
+Create contact us screen, add google map api.
+
+Yichen Wang:
+Create Admin Portal & View.
+Create the search bar and the category menu.
+Create the product management page.
+Update the React Router version and enable creating products.
+Create the product editing page.
+Create the product update function.
+Create product delete function.
+Create functionalities to load order list and delete orders.
