@@ -1,18 +1,18 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import seedRouter from "./routes/seedRoutes.js";
-import productRouter from "./routes/productRoutes.js";
-import userRouter from "./routes/userRoutes.js";
-import orderRouter from "./routes/orderRoutes.js";
-import path from "path";
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoutes.js';
+import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
+import path from 'path';
 
 dotenv.config(); //fetch variables in .env file.
 //connect to mongodb
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log("connected to db");
+    console.log('connected to db');
   })
   .catch((err) => {
     console.log(err.message);
@@ -23,10 +23,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/seed", seedRouter); //when user enter /api/seed, the seedRouter will response to it.
-app.use("/api/products", productRouter);
-app.use("/api/users", userRouter);
-app.use("/api/orders", orderRouter);
+app.use('/api/seed', seedRouter); //when user enter /api/seed, the seedRouter will response to it.
+app.use('/api/products', productRouter);
+app.use('/api/users', userRouter);
+app.use('/api/orders', orderRouter);
 
 const _dirname = path.resolve();
 app.use(express.static(path.join(_dirname, "/frontend/build")));

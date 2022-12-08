@@ -32,6 +32,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import ContactScreen from './screens/ContactScreen';
+import ErrorScreen from './screens/ErrorScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -73,6 +74,7 @@ function App() {
           <NavBar className='nav-color' variant='dark' expand='lg'>
             <Container>
               <Button
+                className='category-button'
                 variant='light'
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
@@ -236,6 +238,7 @@ function App() {
                   </AdminRoute>
                 }
               />
+              <Route path='*' element={<ErrorScreen />} />
             </Routes>
           </Container>
         </main>
