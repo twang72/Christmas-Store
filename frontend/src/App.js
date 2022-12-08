@@ -19,7 +19,6 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import DashboardScreen from './screens/DashboardScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminRoute from './components/AdminRoute';
 import Button from 'react-bootstrap/Button';
@@ -33,6 +32,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import ContactScreen from './screens/ContactScreen';
+import ErrorScreen from './screens/ErrorScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -74,6 +74,7 @@ function App() {
           <NavBar className='nav-color' variant='dark' expand='lg'>
             <Container>
               <Button
+                className='category-button'
                 variant='light'
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
@@ -121,9 +122,6 @@ function App() {
                   )}
                   {userInfo && userInfo.isAdmin && (
                     <NavDropdown title='Admin' id='admin-nav-dropdown'>
-                      <LinkContainer to='/admin/dashboard'>
-                        <NavDropdown.Item>Dashboard</NavDropdown.Item>
-                      </LinkContainer>
                       <LinkContainer to='/admin/products'>
                         <NavDropdown.Item>Products</NavDropdown.Item>
                       </LinkContainer>
@@ -199,14 +197,6 @@ function App() {
                   </ProtectedRoute>
                 }
               ></Route>
-              <Route
-                path='/admin/dashboard'
-                element={
-                  <AdminRoute>
-                    <DashboardScreen />
-                  </AdminRoute>
-                }
-              />
               <Route path='/search' element={<SearchScreen />} />
               <Route
                 path='/admin/products'
@@ -248,6 +238,7 @@ function App() {
                   </AdminRoute>
                 }
               />
+              <Route path='*' element={<ErrorScreen />} />
             </Routes>
           </Container>
         </main>
