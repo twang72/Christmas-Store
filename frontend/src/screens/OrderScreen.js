@@ -65,16 +65,16 @@ export default function OrderScreen() {
   return loading ? (
     <LoadingBox></LoadingBox>
   ) : error ? (
-    <MessageBox variant="danger">{error}</MessageBox>
+    <MessageBox variant='danger'>{error}</MessageBox>
   ) : (
     <div>
       <Helmet>
         <title>Order {orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order {orderId}</h1>
+      <h1 className='my-3'>Order {orderId}</h1>
       <Row>
         <Col md={8}>
-          <Card className="mb-3">
+          <Card className='mb-3'>
             <Card.Body>
               <Card.Title>Shipping</Card.Title>
               <Card.Text>
@@ -84,43 +84,41 @@ export default function OrderScreen() {
                 ,{order.shippingAddress.country}
               </Card.Text>
               {order.isDelivered ? (
-                <MessageBox variant="success">
+                <MessageBox variant='success'>
                   Delivered at {order.deliveredAt}
                 </MessageBox>
               ) : (
-                <MessageBox variant="danger">Not Delivered</MessageBox>
+                <MessageBox variant='danger'>Not Delivered</MessageBox>
               )}
             </Card.Body>
           </Card>
 
-          <Card className="mb-3">
+          <Card className='mb-3'>
             <Card.Body>
               <Card.Title>Payment</Card.Title>
               <Card.Text>
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
               {order.isPaid ? (
-                <MessageBox variant="success">
-                  Paid at {order.paidAt}
-                </MessageBox>
+                <MessageBox variant='success'>Paid</MessageBox>
               ) : (
-                <MessageBox variant="success">Paid</MessageBox>
+                <MessageBox variant='success'>Not Paid</MessageBox>
               )}
             </Card.Body>
           </Card>
 
-          <Card className="mb-3">
+          <Card className='mb-3'>
             <Card.Body>
               <Card.Title>Items</Card.Title>
-              <ListGroup variant="flush">
+              <ListGroup variant='flush'>
                 {order.orderItems.map((item) => (
                   <ListGroup.Item key={item._id}>
-                    <Row className="align-items-center">
+                    <Row className='align-items-center'>
                       <Col md={6}>
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="img-fluid rounded img-thumbnail"
+                          className='img-fluid rounded img-thumbnail'
                         ></img>{' '}
                         <Link to={`/product/${item.slug}`}>{item.name}</Link>
                       </Col>
@@ -137,10 +135,10 @@ export default function OrderScreen() {
         </Col>
 
         <Col md={4}>
-          <Card className="mb-3">
+          <Card className='mb-3'>
             <Card.Body>
               <Card.Title>Order Summary</Card.Title>
-              <ListGroup variant="flush">
+              <ListGroup variant='flush'>
                 <ListGroup.Item>
                   <Row>
                     <Col>Items</Col>
