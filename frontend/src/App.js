@@ -78,7 +78,7 @@ function App() {
                 variant='light'
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
-                <i className='fas fa-bars'></i>
+                Product Category
               </Button>
               <LinkContainer to='/'>
                 <NavBar.Brand>Christmas Store</NavBar.Brand>
