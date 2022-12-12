@@ -71,15 +71,8 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <NavBar className="nav-color" variant="dark" expand="lg">
+          <NavBar className="nav-bar" variant="dark" expand="lg">
             <Container>
-              <Button
-                className="category-button"
-                variant="light"
-                onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-              >
-                Product Filter
-              </Button>
               <LinkContainer to="/">
                 <NavBar.Brand>Christmas Store</NavBar.Brand>
               </LinkContainer>
@@ -87,6 +80,13 @@ function App() {
               <NavBar.Collapse id="basic-navbar-nav">
                 <SearchBox />
                 <Nav className="me-auto w-100  justify-content-end">
+                  <Button
+                    className="category-button"
+                    variant="light"
+                    onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
+                  >
+                    Product Filter
+                  </Button>
                   <Link className="nav-link" to="/contact">
                     Contact Us
                   </Link>

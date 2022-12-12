@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-color {
+.nav-bar {
   background-color: rgb(200, 26, 61);
 }
 
@@ -22,7 +22,6 @@ main {
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .product {
@@ -103,7 +102,7 @@ main {
 
 /*Category button*/
 .category-button {
-  margin-right: 10px
+  margin-left: 0%;
 }
 
 .row {
@@ -121,7 +120,7 @@ main {
   width: 70%;
 }
 
-@media  screen and (max-width:530px) {
+@media  screen and (max-width:540px) {
   .category-button {
     width: 100px;
     height: 30px;
