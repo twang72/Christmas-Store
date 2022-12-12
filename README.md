@@ -175,3 +175,5 @@ Create the product editing page.
 Create the product update function.
 Create product delete function.
 Create functionalities to load order list and delete orders.
+
+## Project Demo: https://www.youtube.com/watch?v=tLt8UOOV6YE
