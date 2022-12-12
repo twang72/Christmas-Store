@@ -25,21 +25,32 @@ export default function ContactScreen() {
       <Helmet>
         <title>Contact Us</title>
       </Helmet>
-      <Card
-        style={{ width: '40rem' }}
-        className="contact-card text-center mb-4"
-      >
-        <Card.Body>
-          <Card.Title>Contact Us</Card.Title>
-          <ListGroup horizontal className="contact-list">
-            <ListGroup.Item>Phone: 604-123-456</ListGroup.Item>
-            <ListGroup.Item>Email: example@email.com</ListGroup.Item>
-            <ListGroup.Item>
-              Address: 410 West Georgia, Vancouver, BC
-            </ListGroup.Item>
-          </ListGroup>
-        </Card.Body>
-      </Card>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Email</h5>
+              <p class="card-text">example@christmasstore.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Phone</h5>
+              <p class="card-text">778-123-456</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Address</h5>
+              <p class="card-text">410 West Georgia, Vancouver, BC</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <GoogleMap
           zoom={13}

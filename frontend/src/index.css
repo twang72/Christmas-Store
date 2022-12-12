@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.nav-color {
+.nav-bar {
   background-color: rgb(200, 26, 61);
 }
 
@@ -22,7 +22,6 @@ main {
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .product {
@@ -103,19 +102,43 @@ main {
 
 /*Category button*/
 .category-button {
-  margin-right: 10px
+  margin-left: 0%;
 }
 
-.contact-card {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: auto;
+.row {
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
+
 
 .map-container {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1px;
-  width: 80%;
+  margin-bottom: auto;
+  margin-top: auto;
+  width: 70%;
+}
+
+@media  screen and (max-width:540px) {
+  .category-button {
+    width: 100px;
+    height: 30px;
+    font-size:xx-small;
+    margin-right: 2px;
+  }
+
+
+  .navbar-brand {
+    font-size:x-small;
+  }
+
+  .featured-products {
+    font-size:medium;
+  }
+
+  .side-navbar {
+    margin-right: 0%;
+  }
+  
 }

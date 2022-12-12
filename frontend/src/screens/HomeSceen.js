@@ -48,7 +48,7 @@ function HomeScreen() {
       <Helmet>
         <title>Christmas Store</title>
       </Helmet>
-      <h1>Featured Products</h1>
+      <h1 className="featured-products">Featured Products</h1>
       <div className="products">
         {loading ? (
           //change to loading component
