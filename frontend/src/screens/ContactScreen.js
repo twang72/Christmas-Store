@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useMemo } from 'react';
 import { GoogleMap, useLoadScript, MarkerF } from '@react-google-maps/api';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Card from 'react-bootstrap/Card';
 
 export default function ContactScreen() {
   const { isLoaded } = useLoadScript({
@@ -23,20 +25,26 @@ export default function ContactScreen() {
       <Helmet>
         <title>Contact Us</title>
       </Helmet>
-      <h1>Contact Us</h1>
-      <div className='contact'>
-        <h6>Email</h6>
-        <p>christmasstore5610@gmail.com</p>
-        <h6>Phone</h6>
-        <p>000-000-0000</p>
-        <h6>Address</h6>
-        <p>410 W Georgia St, Vancouver, BC V6B 1Z3</p>
-      </div>
+      <Card
+        style={{ width: '40rem' }}
+        className="contact-card text-center mb-4"
+      >
+        <Card.Body>
+          <Card.Title>Contact Us</Card.Title>
+          <ListGroup horizontal className="contact-list">
+            <ListGroup.Item>Phone: 604-123-456</ListGroup.Item>
+            <ListGroup.Item>Email: example@email.com</ListGroup.Item>
+            <ListGroup.Item>
+              Address: 410 West Georgia, Vancouver, BC
+            </ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
       <div>
         <GoogleMap
           zoom={13}
           center={center}
-          mapContainerClassName='map-container'
+          mapContainerClassName="map-container"
         >
           <MarkerF position={center} />
         </GoogleMap>
